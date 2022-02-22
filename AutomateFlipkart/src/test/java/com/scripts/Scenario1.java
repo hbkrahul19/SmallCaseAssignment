@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import com.pageObjects.Locator;
 
@@ -19,6 +20,7 @@ import io.opentelemetry.exporter.logging.SystemOutLogExporter;
 public class Scenario1 {
 	
 	static String productName;	
+	@Test
 	public static WebDriver scenarioScript1() throws InterruptedException{
 		
 		WebDriver driver = new ChromeDriver();
@@ -61,21 +63,22 @@ public class Scenario1 {
        }
        
        
-		return driver;
-	}
+		
+	
 	
 	
 
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+	//	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
 		try {
 			scenarioScript1();
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
 		}
-		System.out.println("Hello");
+	//	System.out.println("Hello");
+//	}
+		return driver;
 	}
-
 }

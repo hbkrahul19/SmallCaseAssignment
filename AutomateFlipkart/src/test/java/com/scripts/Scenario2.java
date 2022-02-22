@@ -57,7 +57,7 @@ public class Scenario2 {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
 		
-	//	Scenario1.scenarioScript1();
+		Scenario1.scenarioScript1();
 		scenarioScript2();
 		
 		System.out.println("Test complete");
