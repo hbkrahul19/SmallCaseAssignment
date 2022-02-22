@@ -59,6 +59,26 @@ public class Locator {
 		return driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"));
 	}
 	
+	public static WebElement amazonFirstProduct(WebDriver driver) {
+		return driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a/span"));
+				}
+	
+	public static WebElement amazonAddToCartButton(WebDriver driver) {
+		return driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
+	}
+	
+	public static WebElement skipButton(WebDriver driver) {
+		return driver.findElement(By.cssSelector("input[aria-labelledby='attachSiNoCoverage-announce']"));
+	}
+	
+	public static WebElement amazonGoToCart(WebDriver driver) {
+		return driver.findElement(By.xpath("//a[normalize-space()='Go to Cart']"));
+	}
+	
+	public static WebElement amazonProductPrice(WebDriver driver) {
+		return driver.findElement(By.xpath("//span[@id='sc-subtotal-amount-buybox']//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap']"));
+	}
+	
 	public static WebElement test(WebDriver driver) {
 		return driver.findElement(By.cssSelector("._2KpZ6l._2U9uOA._3v1-ww"));
 	}

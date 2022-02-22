@@ -30,7 +30,7 @@ public class Scenario1 {
 		
 
 		Locator.closePopup(driver).click();
-		Locator.searchField(driver).sendKeys("TV");
+		Locator.searchField(driver).sendKeys("Apple iPhone 13 128GB Midnight");
 		Locator.searchButton(driver).click();
 		
 		 productName = Locator.productName(driver).getText();
