@@ -1,4 +1,4 @@
 call mvn clean
 
-::call mvn test -DsuiteXmlFile=testngScenario1.xml
+call mvn test -Dsurefire.suiteXmlFiles=testngScenario1.xml
 pause

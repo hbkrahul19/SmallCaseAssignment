@@ -45,6 +45,15 @@ public class Locator {
 		return driver.findElement(By.cssSelector("div[class='Ob17DV _3X7Jj1'] span"));
 	}
 	
+public static WebElement increaseQuantity(WebDriver driver) {
+		
+//	return driver.findElement(By.cssSelector("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)"));
+return driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[2]/div/div/div[1]/div/div[2]/div/div[4]/div[1]/div/button[2]"));	
+} 
+public static WebElement totalPrice(WebDriver driver) {
+	
+	return driver.findElement(By.cssSelector("div[class='Ob17DV _3X7Jj1'] span"));
+} 
 	
 	public static WebElement productName(WebDriver driver) {
 		return driver.findElement(By.cssSelector("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)"));

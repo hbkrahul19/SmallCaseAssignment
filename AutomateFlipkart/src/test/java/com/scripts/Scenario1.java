@@ -1,48 +1,55 @@
 package com.scripts;
 
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 import java.time.Duration;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.pageObjects.Locator;
-
-import io.opentelemetry.exporter.logging.SystemOutLogExporter;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Scenario1 {
 	
-	static String productName;	
+	WebDriver driver;
+//	static String productName;	
+	
+	@BeforeClass
+	public  void setup() throws Exception{
+		WebDriverManager.chromedriver().setup();
+	//	driver = new ChromeDriver();
+	}
+	
+	
 	@Test
-	public static WebDriver scenarioScript1() throws InterruptedException{
+	public void scenarioScript1() throws InterruptedException{
 		
 		WebDriver driver = new ChromeDriver();
-		String windowHandle = driver.getWindowHandle();
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
-		driver.manage().window().maximize();
+
 		driver.get("https://www.flipkart.com/");
+		driver.manage().window().maximize();
 		
 
 		Locator.closePopup(driver).click();
-		Locator.searchField(driver).sendKeys("Apple iPhone 13 128GB Midnight");
+		Locator.searchField(driver).sendKeys("Apple iPhone 13 Pro Max (256GB) - Gold");
 		Locator.searchButton(driver).click();
 		
-		 productName = Locator.productName(driver).getText();
+	//	 productName = Locator.productName(driver).getText();
 		
 		String parent = driver.getWindowHandle();
 		Locator.firstProduct(driver).click();
 		
 		Set<String> allTabs = driver.getWindowHandles();
 		
-		//System.out.println(allTabs.size());
 		
        for(String child:allTabs) {
     	   if(!parent.equalsIgnoreCase(child)) {
@@ -51,34 +58,29 @@ public class Scenario1 {
     	       Locator.pinCheck(driver).click();
     	      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
     		 
-    	       System.out.println(Locator.productPrice(driver).getText());
-    	   
+    	     //  System.out.println(Locator.productPrice(driver).getText());
+    	      Reporter.log(Locator.productPrice(driver).getText());
     	    
     	      
     	       WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
     	       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='ADD TO CART']"))).click();
     	       Thread.sleep(1000);
-    	       System.out.println(Locator.cartPrice(driver).getText());
+    	       Reporter.log("Product Price: "+Locator.cartPrice(driver).getText());
+    			JavascriptExecutor jse = (JavascriptExecutor) driver;
+    			   jse.executeScript("window.scrollBy(0,500)");
     	   }
        }
-       
-       
-		
-	
-	
-	
-
-//	public static void main(String[] args) {
-
-	//	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
-		try {
-			scenarioScript1();
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-	//	System.out.println("Hello");
-//	}
-		return driver;
 	}
+	@Test
+	public void increaseProductPrice() throws InterruptedException{
+		Locator.increaseQuantity(driver).click();
+		Reporter.log("Final Product Price (Quantity= 2)"+Locator.totalPrice(driver).getText());
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		if(driver!=null) {
+			driver.quit();
+		}
 }
+	}

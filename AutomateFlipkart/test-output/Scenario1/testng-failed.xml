@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [Scenario1]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="tests" name="Scenario1Test(failed)">
+    <classes>
+      <class name="com.scripts.Scenario1">
+        <methods>
+          <include name="tearDown"/>
+          <include name="openFlipkart"/>
+          <include name="scenarioScript1"/>
+        </methods>
+      </class> <!-- com.scripts.Scenario1 -->
+    </classes>
+  </test> <!-- Scenario1Test(failed) -->
+</suite> <!-- Failed suite [Scenario1] -->

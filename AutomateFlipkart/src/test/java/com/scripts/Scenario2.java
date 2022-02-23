@@ -9,20 +9,38 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import com.pageObjects.Locator;
 
-public class Scenario2 {
+import io.github.bonigarcia.wdm.WebDriverManager;
 
+
+public class Scenario2 {
 	
-	public static WebDriver scenarioScript2() {
+	
+	WebDriver driver;
+	@BeforeClass
+	public  void setup() throws Exception{
+		System.out.println("Launching chrome browser");
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		
+	}
+	
+	@Test
+	public void flipkartProduct() throws InterruptedException {
+		Scenario1 fp = new Scenario1();
+		fp.scenarioScript1();
+	}
+	@Test
+	public  void scenarioScript2() {
 		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
 		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
 		
-		
-	//	Locator.amazonSearchField(driver).sendKeys(Scenario1.productName);
-		Locator.amazonSearchField(driver).sendKeys("Apple iPhone 13 128GB Midnight");
+	    Locator.amazonSearchField(driver).sendKeys("Apple iPhone 13 Pro Max (256GB) - Gold");
 		
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='nav-search-submit-button']"))).click();
@@ -47,20 +65,8 @@ public class Scenario2 {
 	    		  System.out.println(Locator.amazonProductPrice(driver).getText());
 	    		   
 	    	   }}
-		
-		
-		return driver;
+
 	}
 	
-	
-	
-	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
-		
-		Scenario1.scenarioScript1();
-		scenarioScript2();
-		
-		System.out.println("Test complete");
-	}
 
 }

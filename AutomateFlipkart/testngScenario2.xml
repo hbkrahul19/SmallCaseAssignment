@@ -3,7 +3,7 @@
 <suite name="Scenario1" parallel="tests" thread-count="1">
 	<test name ="Scenario1Test">
 <classes>
-	<class name="com.scripts.Scenario1">
+	<class name="com.scripts.Scenario2">
 	</class>
 </classes>
 </test>
