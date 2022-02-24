@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Scenario1" parallel="tests" thread-count="1">
-	<test name ="Scenario1Test">
+<suite name="Scenario2" parallel="tests" thread-count="1">
+	<test name ="Scenario2Test">
 <classes>
 	<class name="com.scripts.Scenario2">
+	</class>
+	<class name="com.scripts.Comparison">
 	</class>
 </classes>
 </test>

@@ -72,6 +72,17 @@ public static WebElement totalPrice(WebDriver driver) {
 		return driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a/span"));
 				}
 	
+	public static WebElement amazonProductName(WebDriver driver) {
+		
+		return driver.findElement(By.xpath("//span[@id='productTitle']"));
+	}
+	public static WebElement amazonPrice(WebDriver driver) {
+	//	return driver.findElement(By.cssSelector("span[class='a-price a-text-price a-size-medium apexPriceToPay'] span[aria-hidden='true']"));
+	
+	return driver.findElement(By.xpath("//span[@aria-hidden='true'][contains(text(),'₹')]"));
+	}
+	
+	
 	public static WebElement amazonAddToCartButton(WebDriver driver) {
 		return driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
 	}
@@ -84,12 +95,16 @@ public static WebElement totalPrice(WebDriver driver) {
 		return driver.findElement(By.xpath("//a[normalize-space()='Go to Cart']"));
 	}
 	
+	public static WebElement amazonCartButton(WebDriver driver) {
+		return driver.findElement(By.xpath("//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input"));
+	}
+	
 	public static WebElement amazonProductPrice(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[@id='sc-subtotal-amount-buybox']//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap']"));
 	}
 	
 	public static WebElement test(WebDriver driver) {
-		return driver.findElement(By.cssSelector("._2KpZ6l._2U9uOA._3v1-ww"));
+		return driver.findElement(By.xpath("//div[contains(@class,'rush-component s-featured-result-item')]//span[@class='a-price-whole'][normalize-space()='60,999']"));
 	}
 	
 	

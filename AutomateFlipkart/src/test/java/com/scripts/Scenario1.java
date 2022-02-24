@@ -19,6 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Scenario1 {
 	
 	WebDriver driver;
+public	String FProductPrice;
 //	static String productName;	
 	
 	@BeforeClass
@@ -40,7 +41,7 @@ public class Scenario1 {
 		
 
 		Locator.closePopup(driver).click();
-		Locator.searchField(driver).sendKeys("Apple iPhone 13 Pro Max (256GB) - Gold");
+		Locator.searchField(driver).sendKeys("Apple iPhone 13 Pro Max (256GB)");
 		Locator.searchButton(driver).click();
 		
 	//	 productName = Locator.productName(driver).getText();
@@ -59,22 +60,34 @@ public class Scenario1 {
     	      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
     		 
     	     //  System.out.println(Locator.productPrice(driver).getText());
-    	      Reporter.log(Locator.productPrice(driver).getText());
+    	    //  Reporter.log(Locator.productPrice(driver).getText());
     	    
     	      
     	       WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
     	       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='ADD TO CART']"))).click();
     	       Thread.sleep(1000);
-    	       Reporter.log("Product Price: "+Locator.cartPrice(driver).getText());
+    	     FProductPrice = Locator.cartPrice(driver).getText();
+    	       
+    	       Reporter.log("Product Price on Flipkart: "+FProductPrice.replace("₹", "Rs "));
     			JavascriptExecutor jse = (JavascriptExecutor) driver;
     			   jse.executeScript("window.scrollBy(0,500)");
     	   }
        }
 	}
 	@Test
-	public void increaseProductPrice() throws InterruptedException{
+	public void increaseProductPrice() throws Exception{
+		
+		try {
 		Locator.increaseQuantity(driver).click();
-		Reporter.log("Final Product Price (Quantity= 2)"+Locator.totalPrice(driver).getText());
+		System.out.println(("Final Product Price after addition of quantity: "+Locator.totalPrice(driver).getText().replace("₹", "Rs ")));
+		}
+		catch(NullPointerException e) {
+			Reporter.log("Quantity is not increasing or product is not in stock");
+		}
+		
+		finally {
+			Reporter.log(("Final Product Price after addition of quantity: "+Locator.totalPrice(driver).getText().replace("₹", "Rs ")));
+		}
 	}
 	
 	@AfterClass
