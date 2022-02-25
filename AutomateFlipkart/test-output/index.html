@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\USER\AppData\Local\Temp\testng-eclipse-1031707287\testng-customsuite.xml</span>
+                    <span>C:\Users\USER\AppData\Local\Temp\testng-eclipse-429703841\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -145,8 +145,8 @@
                   </a> <!-- increaseProductPrice -->
                   <span class="method-name">increaseProductPrice</span>
                   <div class="stack-trace">java.lang.NullPointerException
-	at com.pageObjects.Locator.increaseQuantity(Locator.java:51)
-	at com.scripts.Scenario1.increaseProductPrice(Scenario1.java:76)
+	at com.pageObjects.Locator.totalPrice(Locator.java:55)
+	at com.scripts.Scenario1.increaseProductPrice(Scenario1.java:89)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -199,7 +199,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\USER\AppData\Local\Temp\testng-eclipse-1031707287\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\USER\AppData\Local\Temp\testng-eclipse-429703841\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -252,16 +252,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'scenarioScript1')
 data.setCell(0, 2, 'com.scripts.Scenario1')
-data.setCell(0, 3, 31068);
+data.setCell(0, 3, 32696);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'increaseProductPrice')
 data.setCell(1, 2, 'com.scripts.Scenario1')
-data.setCell(1, 3, 47);
+data.setCell(1, 3, 28);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -275,7 +275,13 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">scenarioScript1</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Product Price on Flipkart: ₹1,29,900</span>
+                <span class="reporter-method-output">Product Price on Flipkart: Rs 1,39,900</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">increaseProductPrice</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Quantity is not increasing or product is not in stock</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -302,15 +308,15 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">increaseProductPrice</span>
-                <span class="method-start">1518 ms</span>
+                <span class="method-start">3594 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">scenarioScript1</span>
-                <span class="method-start">1580 ms</span>
+                <span class="method-start">3635 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">32656 ms</span>
+                <span class="method-start">36344 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
