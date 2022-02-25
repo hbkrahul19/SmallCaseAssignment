@@ -2,27 +2,24 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Quantity is not increasing or product is not in stock]]>
-    </line>
-    <line>
       <![CDATA[Product Price on Flipkart: Rs 1,39,900]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-02-25T09:22:16 IST" name="Default suite" finished-at="2022-02-25T09:22:52 IST" duration-ms="36430">
+  <suite started-at="2022-02-25T11:52:26 IST" name="Default suite" finished-at="2022-02-25T11:52:58 IST" duration-ms="32661">
     <groups>
     </groups>
-    <test started-at="2022-02-25T09:22:16 IST" name="Default test" finished-at="2022-02-25T09:22:52 IST" duration-ms="36430">
+    <test started-at="2022-02-25T11:52:26 IST" name="Default test" finished-at="2022-02-25T11:52:58 IST" duration-ms="32661">
       <class name="com.scripts.Scenario1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T09:22:16 IST" name="setup" finished-at="2022-02-25T09:22:19 IST" duration-ms="3565" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T11:52:26 IST" name="setup" finished-at="2022-02-25T11:52:26 IST" duration-ms="902" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="increaseProductPrice()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T09:22:19 IST" name="increaseProductPrice" finished-at="2022-02-25T09:22:20 IST" duration-ms="28" status="FAIL">
+        <test-method signature="increaseProductPrice()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T11:52:26 IST" name="increaseProductPrice" finished-at="2022-02-25T11:52:29 IST" duration-ms="2107" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
 at com.pageObjects.Locator.totalPrice(Locator.java:55)
-at com.scripts.Scenario1.increaseProductPrice(Scenario1.java:89)
+at com.scripts.Scenario1.increaseProductPrice(Scenario1.java:98)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,19 +52,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </full-stacktrace>
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
-            <line>
-              <![CDATA[Quantity is not increasing or product is not in stock]]>
-            </line>
           </reporter-output>
         </test-method> <!-- increaseProductPrice -->
-        <test-method signature="scenarioScript1()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T09:22:20 IST" name="scenarioScript1" finished-at="2022-02-25T09:22:52 IST" duration-ms="32696" status="PASS">
+        <test-method signature="scenarioScript1()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T11:52:29 IST" name="scenarioScript1" finished-at="2022-02-25T11:52:58 IST" duration-ms="29532" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Product Price on Flipkart: Rs 1,39,900]]>
             </line>
           </reporter-output>
         </test-method> <!-- scenarioScript1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T09:22:52 IST" name="tearDown" finished-at="2022-02-25T09:22:52 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.scripts.Scenario1@c88a337]" started-at="2022-02-25T11:52:58 IST" name="tearDown" finished-at="2022-02-25T11:52:58 IST" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

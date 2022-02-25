@@ -48,7 +48,7 @@ public class Locator {
 public static WebElement increaseQuantity(WebDriver driver) {
 		
 //	return driver.findElement(By.cssSelector("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)"));
-return driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[2]/div/div/div[1]/div/div[2]/div/div[4]/div[1]/div/button[2]"));	
+return driver.findElement(By.xpath("//button[normalize-space()='+']"));	
 } 
 public static WebElement totalPrice(WebDriver driver) {
 	
@@ -104,7 +104,7 @@ public static WebElement totalPrice(WebDriver driver) {
 	}
 	
 	public static WebElement test(WebDriver driver) {
-		return driver.findElement(By.xpath("//div[contains(@class,'rush-component s-featured-result-item')]//span[@class='a-price-whole'][normalize-space()='60,999']"));
+		return driver.findElement(By.className("_23FHuj"));
 	}
 	
 	

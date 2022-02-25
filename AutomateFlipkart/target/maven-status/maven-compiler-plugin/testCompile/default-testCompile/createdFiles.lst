@@ -1,4 +1,3 @@
 com\scripts\Scenario2.class
-com\scripts\Scenario1.class
 com\pageObjects\Locator.class
-com\scripts\Comparison.class
+com\scripts\Scenario1.class

@@ -4,8 +4,11 @@ import java.util.Set;
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -70,15 +73,19 @@ public	String FProductPrice;
     	       
     	       Reporter.log("Product Price on Flipkart: "+FProductPrice.replace("₹", "Rs "));
     			JavascriptExecutor jse = (JavascriptExecutor) driver;
-    			   jse.executeScript("window.scrollBy(0,500)");
+    			   jse.executeScript("window.scrollBy(0,450)");
     	   }
        }
 	}
 	@Test
 	public void increaseProductPrice() throws Exception{
-		
+		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		try {
-		Locator.increaseQuantity(driver).click();
+			
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='+']"))).click();
+			
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		System.out.println(("Final Product Price after addition of quantity: "+Locator.totalPrice(driver).getText().replace("₹", "Rs ")));
 		}
 		catch(NullPointerException e) {

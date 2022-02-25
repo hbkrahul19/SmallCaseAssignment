@@ -96,9 +96,9 @@ public class Scenario2 {
 	    	
 	    	
 	    	String FPrice = fp.FProductPrice.replace("₹", "").replace(".00", "").replaceAll(",", "");
-	    	Reporter.log(FPrice);
+	    //	Reporter.log(FPrice);
 	    	
-	    /*	//Price is same
+	   	//Price is same
 	    	if(Long.parseLong(FPrice)==Long.parseLong(APrice)) {
 	    		Reporter.log("Product price is same on Flipkart & Amazon: "+APrice);
 	    	}else
@@ -111,7 +111,7 @@ public class Scenario2 {
 	    		//Amazon product price is more than Flipkart
 	    		if(Long.parseLong(FPrice)<Long.parseLong(APrice)) {
 	    		Reporter.log("Product price on Flipkart lesser than Amazon: "+"Amazon= "+APrice+" & "+"Flipkart= "+FPrice);
-	    	} */
+	    	} 
 		}
 
 		@AfterClass
