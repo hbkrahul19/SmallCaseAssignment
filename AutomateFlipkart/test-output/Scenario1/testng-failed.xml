@@ -5,9 +5,9 @@
     <classes>
       <class name="com.scripts.Scenario1">
         <methods>
+          <include name="setup"/>
           <include name="tearDown"/>
-          <include name="openFlipkart"/>
-          <include name="scenarioScript1"/>
+          <include name="increaseProductPrice"/>
         </methods>
       </class> <!-- com.scripts.Scenario1 -->
     </classes>

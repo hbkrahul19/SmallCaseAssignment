@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Scenario1Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Feb 25 10:56:49 IST 2022</td>
+<td>Started on:</td><td>Sun Feb 27 22:02:34 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>38 seconds (38632 ms)</td>
+<tr><td>Total time:</td><td>38 seconds (38566 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,61 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.scripts.Scenario1.increaseProductPrice()'><b>increaseProductPrice</b><br>Test class: com.scripts.Scenario1<br/>
-<a href="#Output-866209388" onClick='toggleBox("Output-866209388", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-866209388" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-866209388">
-Quantity is not increasing or product is not in stock<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.pageObjects.Locator.totalPrice(Locator.java:55)
-	at com.scripts.Scenario1.increaseProductPrice(Scenario1.java:94)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace866209388", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace866209388'><pre>java.lang.NullPointerException
-	at com.pageObjects.Locator.totalPrice(Locator.java:55)
-	at com.scripts.Scenario1.increaseProductPrice(Scenario1.java:94)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-</pre></div></td>
-<td>0</td>
-<td>com.scripts.Scenario1@5ace1ed4</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -131,16 +76,17 @@ Quantity is not increasing or product is not in stock<br/>
 </tr>
 <tr>
 <td title='com.scripts.Scenario1.scenarioScript1()'><b>scenarioScript1</b><br>Test class: com.scripts.Scenario1<br/>
-<a href="#Output-239426058" onClick='toggleBox("Output-239426058", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-718297799" onClick='toggleBox("Output-718297799", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-239426058" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-239426058">
+<a href="#Output-718297799" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-718297799">
 Product Price on Flipkart: Rs 1,39,900<br/>
+Final Product Price after addition of quantity: Rs 2,79,800<br/>
 </div>
 </td>
 <td></td>
-<td>35</td>
-<td>com.scripts.Scenario1@5ace1ed4</td></tr>
+<td>37</td>
+<td>com.scripts.Scenario1@2accdbb5</td></tr>
 </table><p>
 </body>
 </html>

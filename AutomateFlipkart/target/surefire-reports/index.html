@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Scenario1" class="navigator-link">
-              <span class="suite-name border-failed">Scenario1</span>
+              <span class="suite-name border-passed">Scenario1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Scenario1" class="hide-methods failed suite-Scenario1"> (hide)</a> <!-- hide-methods failed suite-Scenario1 -->
-                      <a href="#" panel-name="suite-Scenario1" class="show-methods failed suite-Scenario1"> (show)</a> <!-- show-methods failed suite-Scenario1 -->
-                    </span>
-                    <div class="method-list-content failed suite-Scenario1">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Scenario1" title="com.scripts.Scenario1" class="method navigator-link" hash-for-method="increaseProductPrice">increaseProductPrice</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Scenario1 -->
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -133,31 +119,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Scenario1" class="panel Scenario1">
-          <div class="suite-Scenario1-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.scripts.Scenario1</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="increaseProductPrice">
-                  </a> <!-- increaseProductPrice -->
-                  <span class="method-name">increaseProductPrice</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at com.pageObjects.Locator.totalPrice(Locator.java:55)
-	at com.scripts.Scenario1.increaseProductPrice(Scenario1.java:94)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 18 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Scenario1-class-failed -->
           <div class="suite-Scenario1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -225,15 +186,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'scenarioScript1')
 data.setCell(0, 2, 'com.scripts.Scenario1')
-data.setCell(0, 3, 35742);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'increaseProductPrice')
-data.setCell(1, 2, 'com.scripts.Scenario1')
-data.setCell(1, 3, 15);
+data.setCell(0, 3, 37816);
 window.suiteTableData['Scenario1']= { tableData: data, tableDiv: 'times-div-Scenario1'}
 return data;
 }
@@ -253,12 +210,7 @@ return data;
               <span class="reporter-method-name">scenarioScript1</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">Product Price on Flipkart: Rs 1,39,900</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">increaseProductPrice</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Quantity is not increasing or product is not in stock</span>
+                <span class="reporter-method-output">Final Product Price after addition of quantity: Rs 2,79,800</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -282,19 +234,9 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">increaseProductPrice</span>
-                <span class="method-start">2766 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <span class="method-name">scenarioScript1</span>
-                <span class="method-start">2812 ms</span>
+                <span class="method-start">719 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">38562 ms</span>
-              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -48,7 +48,7 @@ public class Locator {
 public static WebElement increaseQuantity(WebDriver driver) {
 		
 //	return driver.findElement(By.cssSelector("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)"));
-return driver.findElement(By.xpath("//button[normalize-space()='+']"));	
+return driver.findElement(By.xpath("//button[text()='+']"));	
 } 
 public static WebElement totalPrice(WebDriver driver) {
 	
