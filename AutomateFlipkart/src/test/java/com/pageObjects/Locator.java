@@ -20,12 +20,12 @@ public class Locator {
 	}
 
 	public static WebElement firstProduct(WebDriver driver) {
-	//	return driver.findElement(By.xpath("(//div[normalize-space()='Vu Premium 108 cm (43 inch) Ultra HD (4K) LED Smart Android TV'])[1]"));
+	;
 		return driver.findElement(By.xpath("(//div[@class='fMghEO'])[1]"));
 	}
 	public static WebElement pinCode(WebDriver driver) {
 	
-		//	return driver.findElement(By.cssSelector("#pincodeInputId"));
+		
 	return driver.findElement(By.xpath("//input[@id='pincodeInputId']"));
 	}
 	
@@ -45,11 +45,11 @@ public class Locator {
 		return driver.findElement(By.cssSelector("div[class='Ob17DV _3X7Jj1'] span"));
 	}
 	
-public static WebElement increaseQuantity(WebDriver driver) {
+	public static WebElement increaseQuantity(WebDriver driver) {
 		
-//	return driver.findElement(By.cssSelector("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)"));
-return driver.findElement(By.xpath("//button[text()='+']"));	
+		return driver.findElement(By.xpath("//button[text()='+']"));	
 } 
+
 public static WebElement totalPrice(WebDriver driver) {
 	
 	return driver.findElement(By.cssSelector("div[class='Ob17DV _3X7Jj1'] span"));
@@ -77,7 +77,6 @@ public static WebElement totalPrice(WebDriver driver) {
 		return driver.findElement(By.xpath("//span[@id='productTitle']"));
 	}
 	public static WebElement amazonPrice(WebDriver driver) {
-	//	return driver.findElement(By.cssSelector("span[class='a-price a-text-price a-size-medium apexPriceToPay'] span[aria-hidden='true']"));
 	
 	return driver.findElement(By.xpath("//span[@aria-hidden='true'][contains(text(),'₹')]"));
 	}
@@ -96,7 +95,7 @@ public static WebElement totalPrice(WebDriver driver) {
 	}
 	
 	public static WebElement amazonCartButton(WebDriver driver) {
-		return driver.findElement(By.xpath("//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input"));
+		return driver.findElement(By.xpath("//input[@type='submit' and @class='a-button-input' and @aria-labelledby='attach-sidesheet-view-cart-button-announce']"));
 	}
 	
 	public static WebElement amazonProductPrice(WebDriver driver) {

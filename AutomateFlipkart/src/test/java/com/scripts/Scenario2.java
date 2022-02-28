@@ -24,6 +24,7 @@ public class Scenario2 {
 	
 	Scenario1 fp = new Scenario1();
 	WebDriver driver;
+	public	String FProductPrice;
 	public String APrice;
 	
 	
@@ -32,10 +33,47 @@ public class Scenario2 {
 		System.out.println("Launching chrome browser");
 		WebDriverManager.chromedriver().setup();
 	}
+	
 	//FLipkart scenario execution
 	@Test
 	public void flipkartProduct() throws InterruptedException {
-		fp.scenarioScript1();
+		WebDriver driver = new ChromeDriver();
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		driver.get("https://www.flipkart.com/");
+		driver.manage().window().maximize();
+		
+
+		Locator.closePopup(driver).click();
+		Locator.searchField(driver).sendKeys("Apple iPhone 13 Pro Max (256GB)");
+		Locator.searchButton(driver).click();
+		
+		
+		String parent = driver.getWindowHandle();
+		Locator.firstProduct(driver).click();
+		
+		Set<String> allTabs = driver.getWindowHandles();
+		
+		
+		//Switch to new tab
+       for(String child:allTabs) {
+    	   if(!parent.equalsIgnoreCase(child)) {
+    		   driver.switchTo().window(child);
+    		   
+    		   Locator.pinCode(driver).sendKeys("800020");
+    	       Locator.pinCheck(driver).click();
+    	      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
+    	      
+    	       WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+    	       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='ADD TO CART']"))).click();
+    	       Thread.sleep(1000);
+    	     FProductPrice = Locator.totalPrice(driver).getText().replace("₹", "Rs ");
+    	       
+    	       Reporter.log("Product Price on Flipkart: "+FProductPrice);
+    	   
+	}
+       }
 	}
 	
 	//Amazon scenario execution
@@ -60,11 +98,13 @@ public class Scenario2 {
 	    	   if(!parent.equalsIgnoreCase(child)) {
 	    		   driver.switchTo().window(child);
 	    		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
-	    		  // System.out.println(driver.findElement(By.xpath("//span[@id='productTitle']")).getText());
+	    		 
+	    		//Print Product name
 	    		   Reporter.log("Product Name: "+Locator.amazonProductName(driver).getText());
 	    		 
-	    		   APrice = Locator.amazonPrice(driver).getText();
+	    		/*   APrice = Locator.amazonPrice(driver).getText();
 	    		   Reporter.log(APrice.replaceAll(",", "").replace(".00", ""));
+	    		   */
 	    		   
 	    		   //Click on Add to Cart button
 	    		   JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -80,12 +120,12 @@ public class Scenario2 {
 	    		  
 	    		  //If only cart button display
 	    		   }else if(Locator.amazonCartButton(driver).isDisplayed()) {
-	    	   wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input"))).click();
+	    	   wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='submit' and @class='a-button-input' and @aria-labelledby='attach-sidesheet-view-cart-button-announce']"))).click();
 	    	   Reporter.log("Product Price on Amazon: "+Locator.amazonProductPrice(driver).getText().replace("₹", "Rs "));
 	    		   }
 	    		   
 	    		   //When Go cart shows
-	    		   else {
+	    		   else if(driver.findElement(By.xpath("//a[normalize-space()='Go to Cart']")).isDisplayed()){
 	    			   wait.until(ExpectedConditions.elementToBeClickable( By.xpath("//a[normalize-space()='Go to Cart']"))).click();
 	    			   Reporter.log("Product Price on Amazon: "+Locator.amazonProductPrice(driver).getText().replace("₹", "Rs "));
 	    		   }

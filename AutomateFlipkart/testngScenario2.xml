@@ -5,8 +5,6 @@
 <classes>
 	<class name="com.scripts.Scenario2">
 	</class>
-	<class name="com.scripts.Comparison">
-	</class>
 </classes>
 </test>
 
